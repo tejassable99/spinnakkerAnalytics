@@ -15,7 +15,7 @@ const Login = () => {
     setLoading(true);
     setError('');
     try {
-      const res = await axios.post('/api/auth/send-otp', { email });
+      const res = await axios.post('https://spinnakker-analytics.vercel.app/api/auth/send-otp', { email });
       console.log(res.data);
       if (res.status === 200) {
         nav("/verifyOtp");

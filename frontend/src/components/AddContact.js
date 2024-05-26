@@ -20,7 +20,7 @@ const AddContact = () => {
       setLoading(true);
       try {
         const response = await axios.post(
-          'http://localhost:5000/api/contacts/getContacts',
+          'https://spinnakker-analytics.vercel.app/api/contacts/getContacts',
           { userId },
           { headers: { 'x-auth-token': token } }
         );
@@ -48,7 +48,7 @@ const AddContact = () => {
       const userId = localStorage.getItem('userdbuserId');
 
       const response = await axios.post(
-        'http://localhost:5000/api/contacts',
+        'https://spinnakker-analytics.vercel.app/api/contacts',
         { name, phoneNumber, userId },
         { headers: { 'x-auth-token': token } }
       );

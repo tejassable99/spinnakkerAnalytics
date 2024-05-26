@@ -13,7 +13,7 @@ const GlobalContacts = () => {
   useEffect(() => {
     const fetchContacts = async () => {
       try {
-        const res = await axios.get('/api/global/contacts');
+        const res = await axios.get('https://spinnakker-analytics.vercel.app/api/global/contacts');
         setContacts(res.data.contacts);
       } catch (error) {
         console.error(error.response.data);
@@ -30,7 +30,7 @@ const GlobalContacts = () => {
 
   const handleSpamMarking = async (phoneNumber) => {
     try {
-      await axios.post('/api/global/mark-as-spam', { phoneNumber, userId });
+      await axios.post('https://spinnakker-analytics.vercel.app/api/global/mark-as-spam', { phoneNumber, userId });
       setContacts((prevContacts) =>
         prevContacts.map((contact) =>
           contact.phoneNumber === phoneNumber

@@ -25,7 +25,7 @@ const Register = () => {
     setLoading(true);
     setError('');
     try {
-      const res = await axios.post('/api/auth/register', formData);
+      const res = await axios.post('https://spinnakker-analytics.vercel.app/api/auth/register', formData);
       console.log(res.data);
       if (res.status === 201) {
         navigate("/");
