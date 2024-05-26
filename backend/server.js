@@ -9,7 +9,7 @@ require('dotenv').config();
 
 const app = express();
 connectDB();
-app.use(cors());
+app.use(cors({origin:'https://spinnakker-analytics-o55k.vercel.app'}));
 app.use(express.json());
 
 app.use('/api/auth', authRoutes);
